@@ -1,0 +1,15 @@
+[package]
+name = "mac-microphone"
+version = "0.1.0"
+edition = "2024"
+description = "Mac Microphone: a virtual USB microphone for Windows, served over USB/IP on 127.0.0.1 to the Microsoft-certified usbip-win2 client"
+license = "0BSD"
+repository = "https://github.com/DualOSProject/mac-microphone"
+
+[lib]
+name = "mac_microphone"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# MIT. Pinned: the USB Audio Class 2.0 device and the USB/IP server on 127.0.0.1.
+usbip-audio = { git = "https://github.com/network-audio/usbip-audio", rev = "58032ab0664ffec1d0c178f40a3a69359c21f597" }
